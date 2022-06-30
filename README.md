@@ -1,2 +1,1 @@
-# Coding_Problems
-My Daily Coding practice repository which includes basic to advanced level problems. 
+Notes and Homework of Love Babbar DSA course.
