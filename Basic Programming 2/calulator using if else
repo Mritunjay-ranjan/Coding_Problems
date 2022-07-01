@@ -1,0 +1,39 @@
+#include<iostream>
+using namespace std;
+
+int main(){
+    int a; int b;
+    char sign;
+    int output;
+    cout<<"Enter a"<<endl;
+    cout<<"Enter b"<<endl;
+    cout<<"Enter mathematical operator"<<endl;
+    cin>>a;
+    cin>>b;
+    cin>>sign;
+
+    if(sign=='+'){
+        output=a+b;
+        cout<<output<<endl;
+    }
+    else if(sign=='-'){
+        output=a-b;
+        cout<<output<<endl;
+    }
+    else if(sign=='*'){
+        output=a*b;
+        cout<<output<<endl;
+    }
+    else if(sign=='/'){
+        output=a/b;
+        cout<<output<<endl;
+    }
+    else if(sign=='%'){
+        output=a%b;
+        cout<<output<<endl;
+    }
+    else{
+        cout<<"Error"<<endl;
+    }
+    return 0;
+}
