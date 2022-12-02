@@ -1,1 +1,16 @@
 
+compiler:
+1) Scans entire programs first and translates it into machine code.
+2) compiler shows all errors and warnings at the same time.
+3) Error occurs after scanning entire program.
+4) Debugging is slow.
+5) Execution time is less.
+6) compiler is used by languages such as c,c++ etc.
+
+Interpreter:
+1) Scans program line by line and translate it into machine code.
+2) Interpreter shows one error at a time.
+3) Error occurs after scanning each line.
+4) Debugging is fast.
+5) Execution time is more.
+6) Enterpreter is used by the languages such as java, python etc.
