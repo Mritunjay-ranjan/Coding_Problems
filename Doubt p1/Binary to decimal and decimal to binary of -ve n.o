@@ -1,1 +1,64 @@
+//Decimal to binary of -ve and +ve no
 
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+void bits(int n, int bit[]){
+    int i=31;
+    while(n!=0){
+        bit[i]=n&1;
+        n=n>>1;
+        i--;
+    }
+}
+
+void twoComplement(int bit[]){
+    for(int i=31;i>=0;i--){
+        if(bit[i]==0){
+            bit[i]=1;
+        }
+        else{
+            bit[i]=0;
+        }
+    }
+
+int i=31;
+    while(i>=0){
+        if(bit[i]==0){
+            bit[i]=1;
+            break;
+        }
+        else{
+            bit[i]=0;
+            i--;
+        }
+    }
+}
+
+binaryDigits(int bit[]){
+    for(int i=0;i<32;i++){
+        cout<<bit[i];
+    }
+}
+
+int main(){
+    int n=6;
+    int bit[32]={0};
+    if(n<0){
+        n=-n;
+        bits(n,bit);
+        twoComplement(bit);
+        binaryDigits(bit);
+    }
+else{
+    int i=31;
+    while(n!=0){
+        bit[i]=n&1;
+        n=n>>1;
+        i--;
+    }
+    binaryDigits(bit);
+}
+    return 0;
+}
