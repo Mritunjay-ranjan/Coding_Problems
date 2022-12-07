@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+
+int counter;
+
+int main(){
+    int n=5;
+    for(int row=1;row<=n;row++){
+        for(int col=1;col<=n-row;col++){
+            cout<<" ";
+        }
+        if(row==n){
+                for(int col=1;col<=n;col++){
+                    cout<<col<<" ";
+                }
+            }
+            else{
+        for(int col=1;col<=row;col++){
+            
+            if(col==1||col==row){
+                cout<<col<<" ";
+            }
+            else{
+                cout<<"  ";
+            }
+        }
+            }
+        cout<<endl;
+    }
+    return 0;
+}
