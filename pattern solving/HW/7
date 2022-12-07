@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+
+int counter;
+
+int main(){
+    int n=5;
+    for(int row=1;row<=n;row++){
+        counter=row;
+        //spaces
+        for(int col=1;col<=n-row;col++){
+            cout<<" ";
+        }
+        //numbers
+        for(counter=row;counter<2*row;counter++){
+            cout<<counter;
+        }
+        counter--;
+
+        while(counter>row){
+            counter--;
+            cout<<counter;
+        }
+                
+        cout<<endl;
+    }
+    return 0;
+}
