@@ -1,0 +1,35 @@
+/*
+3
+44
+555
+6666
+555
+44
+3
+*/
+#include<iostream>
+using namespace std;
+
+
+int main(){
+    int n=3;
+    int a=4;
+    int count;
+    for(int row=1;row<=a;row++){
+        for(int col=1;col<=row;col++){
+            count=row+2;
+            cout<<row+2;
+        }
+        cout<<endl;
+    }
+    for(int row=1;row<=a-1;row++){
+        count--;
+        for(int col=1;col<=a-1-row+1;col++){
+
+            cout<<count;
+        }
+        cout<<endl;
+    }
+
+    return 0;
+}
