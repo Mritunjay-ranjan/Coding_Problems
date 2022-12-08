@@ -1,0 +1,51 @@
+/*
+
+*
+*1*
+*121*
+*12321*
+*1234321*
+*12321*
+*121*
+*1*
+*
+
+*/
+
+#include<iostream>
+using namespace std;
+
+int main(){
+    int n=4;
+    int col;
+    cout<<"*"<<endl;
+    for(int row=1;row<=n;row++){
+        cout<<"*";
+        for(col=1;col<=row;col++){
+            cout<<col;
+        }
+        col--;
+        while(col>1){
+        cout<<--col;
+    }
+    cout<<"*";
+    cout<<endl;
+    }
+
+    for(int row=2;row<=n;row++){
+        cout<<"*";
+        for(col=1;col<=n-row+1;col++){
+            cout<<col;
+        }
+        col--;
+        while(col>1){
+            cout<<--col;
+        }
+        
+        cout<<"*";
+        cout<<endl;
+    }
+    
+    cout<<"*"<<endl;
+    return 0;
+}
