@@ -1,0 +1,49 @@
+/*
+
+1
+2*3
+4*5*6
+7*8*9*10
+7*8*9*10
+4*5*6
+2*3
+1
+
+*/
+#include<iostream>
+using namespace std;
+
+int main(){
+    int n=4;
+    int counter=1;
+    for(int row=1;row<=n;row++){
+        for(int col=1;col<=row;col++){
+            if(col==1){
+                cout<<counter++;
+            }
+            else
+            cout<<"*"<<counter++;
+        }
+        cout<<endl;
+    }
+    counter--;
+    for(int row=1;row<=n;row++){
+        if(row==1){
+            counter=counter-(n-row);
+            }
+            else{
+                counter=counter-(n-row+1);
+            }
+        for(int col=1;col<=n-row+1;col++){
+            
+            if(col==1){
+            cout<<counter+col-1;
+            }
+            else{
+                cout<<'*'<<counter+col-1;
+            }
+        }
+        cout<<endl;
+    }
+    return 0;
+}
