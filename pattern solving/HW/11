@@ -1,0 +1,23 @@
+#include<iostream>
+using namespace std;
+
+int main(){
+    int n=5;
+    int col;
+    int row;
+    int count;
+    for(row=1;row<=n;row++){
+        for(col=1;col<=row;col++){
+            count='A'+(col-1);
+            cout<<char(count);    
+        }
+        for(col=1;col<row;col++){
+            
+            cout<<char(count-col);    
+        }
+        
+        cout<<endl;
+    } 
+    
+    return 0;
+}
