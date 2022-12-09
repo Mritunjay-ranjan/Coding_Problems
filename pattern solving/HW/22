@@ -1,0 +1,44 @@
+/*
+
+ 1
+ 1 1
+ 1 2 1
+ 1 3 3 1
+ 1 4 6 4 1
+ 1 5 10 10 5 1
+ 1 6 15 20 15 6 1
+
+*/
+
+#include<iostream>
+using namespace std;
+
+int binomialCoeff(int line,int i);
+
+void getPascaltriangle(int n){
+    for(int line=0;line<n;line++){
+        for(int i=0;i<=line;i++){
+            cout<<" "<<binomialCoeff(line,i);
+        }
+        cout<<endl;
+    }
+}
+
+int binomialCoeff(int line, int i){
+    int res=1;
+    if(i>(line-i))
+    i=line-i;
+    for(int j=0;j<i;j++){
+        res=res*(line-j);
+        res=res/(j+1);
+        
+    }
+    return res;
+    }
+
+
+int main(){
+    int n=7;
+    getPascaltriangle(n);
+    return 0;
+}
