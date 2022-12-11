@@ -1,0 +1,42 @@
+/*
+
+reverse an array
+
+*/
+
+#include<iostream>
+using namespace std;
+
+void input(int arr[],int size){
+    for(int i=0;i<size;i++){
+        cin>>arr[i];
+    }
+}
+
+void max_min(int arr[],int size){
+    int max=arr[0];
+    int min=arr[0];
+    for(int i=1;i<size;i++){
+        if(arr[i]>max){
+            max=arr[i];
+        }
+        if(arr[i]<min){
+            min=arr[i];
+        }
+    }
+    cout<<"max element in an array is:"<<max<<endl;
+    cout<<"min element in an array is:"<<min<<endl;
+}
+
+int main(){
+    int arr[100];
+    int size;
+    cout<<"Enter the size of an array"<<endl;
+    cin>>size;
+    cout<<"Enter the input of an array"<<endl;
+    input(arr,size);
+
+    max_min(arr,size);
+ 
+    return 0;
+}
