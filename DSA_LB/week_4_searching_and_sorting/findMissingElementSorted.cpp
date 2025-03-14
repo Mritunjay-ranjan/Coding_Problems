@@ -16,12 +16,14 @@ int findElement(int arr[], int n){
         }
         mid = (s+e)/2;
     }
+    if(ans==-1) ans = n+1;
+    
     return ans;
 }
 
 int main(){
-    int arr[]={1,2,3,4,5,7,8,9,10};
-    int n=9;
+    int arr[]={1,2,3,4,5,6,7,8};
+    int n=8;
     cout<<findElement(arr, n);
     return 0;
 }
