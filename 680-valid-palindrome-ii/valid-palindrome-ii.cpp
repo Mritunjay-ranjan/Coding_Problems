@@ -16,7 +16,7 @@ public:
                 if(k){
                     return false;
                 }
-                while(i<=j && (j-1)>=0 && (i+1)<=(s.length()-1) && s[i]==s[j-1] && s[i+1]==s[j]){
+                while(i<=j && s[i]==s[j-1] && s[i+1]==s[j]){
                     i++;
                     j--;
                 }
