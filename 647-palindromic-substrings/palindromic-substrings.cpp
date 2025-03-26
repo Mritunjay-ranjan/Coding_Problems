@@ -1,24 +1,22 @@
 class Solution {
 public:
-    bool checkPalindrome(string s, int i, int j){
-        while(i<=j){
-            if(s[i]!=s[j]){
-                return false;
-            }
-            i++;
-            j--;
+    
+    int expand(string s, int i, int j){
+        int count = 0;
+        while(i>=0 && j<=(s.length()-1) && s[i]==s[j]){
+            count++;
+            i--;
+            j++;
         }
-        return true;
+        return count;
     }
 
     int countSubstrings(string s) {
         int count=0;
-        for(int i=0;i<s.length();i++){
-            for(int j=i;j<s.length();j++){
-            if(checkPalindrome(s, i, j)){
-                count++;
-            }
-            }
+        for(int center=0;center<s.length();center++){
+            int oddAns = expand(s, center, center);
+            int evenAns = expand(s, center, center+1);
+            count+= (oddAns + evenAns);
         }
         return count;
     }
