@@ -1,31 +1,22 @@
 class Solution {
 public:
     string decodeMessage(string key, string message) {
-        for(int i=0;i<key.length();i++){
-            if(key[i]==' ') {
-                key.erase(i,1);
-                i--;
-                continue;
-            }
-            for(int j=i-1;j>=0;j--){
-                if(key[i]==key[j]){
-                    key.erase(i,1);
-                    i--;
-                    break;
-                }
+        char mapping[300]={0};
+        string ans;
+        char start = 'a';
+        for(auto ch: key){
+            if(mapping[ch]=='\0' and ch!=' '){
+            mapping[ch]= start;
+            start++;
             }
         }
-        string alphabet;
-        for(int i=0;i<26;i++){
-            alphabet.push_back('a'+i);
-        }
-        for(int i=0;i<message.length();i++){
-                if(message[i]==' '){
-                    continue;
-                }
-                if(key.find(message[i])!=string::npos)
-                message[i]= alphabet[key.find(message[i])];
+        for(auto ch: message){
+            if(ch==' '){
+                ans.push_back(' ');
             }
-            return message;
+            else
+            ans.push_back(mapping[ch]);
+        }
+        return ans;
     }
 };
