@@ -8,6 +8,7 @@ class Solution {
         Deque<Integer> deque = new LinkedList<>();
 
         for(int i=0;i<nums.length;i++){
+            
             //remove indices that are out of the current window
             while(!deque.isEmpty() && deque.peek()<i-k+1){
                 deque.poll();
