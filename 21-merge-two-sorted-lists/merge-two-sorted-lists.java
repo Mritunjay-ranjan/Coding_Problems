@@ -23,11 +23,10 @@ class Solution {
             }
             merge = merge.next;
         }
-        
-        if(list1==null && list2!=null){
+        if(list1==null){
             merge.next = list2;
         }
-        if(list2==null && list1!=null){
+        else{
             merge.next = list1;
         }
         return dummy.next;
