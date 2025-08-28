@@ -16,18 +16,16 @@ class Node {
 class Solution {
     HashMap<Node, Node> visitedNode = new HashMap<>();
     public Node copyRandomList(Node head) {
-        if(head == null){
+        if(head==null){
             return null;
         }
-
-        if(this.visitedNode.containsKey(head)){
-            return this.visitedNode.get(head);
+        if(visitedNode.containsKey(head)){
+            return visitedNode.get(head);
         }
         Node node = new Node(head.val, null, null);
-        this.visitedNode.put(head, node);
-        node.next = copyRandomList(head.next);
+        visitedNode.put(head, node);
         node.random = copyRandomList(head.random);
-
+        node.next = copyRandomList(head.next);
         return node;
     }
 }
