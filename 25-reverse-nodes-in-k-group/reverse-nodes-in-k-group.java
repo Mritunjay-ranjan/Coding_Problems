@@ -13,7 +13,7 @@ class Solution {
         ListNode ptr = head;
         ListNode ktail = null;
         ListNode newHead = null;
-
+        
         while(ptr!=null){
             int count = 0;
             ptr = head;
@@ -22,13 +22,12 @@ class Solution {
                 ptr = ptr.next;
                 count++;
             }
-            if(count == k){
+            if(count==k){
                 ListNode revHead = reverseLinkedList(head, k);
 
-                if(newHead == null){
+                if(newHead==null){
                     newHead = revHead;
                 }
-
                 if(ktail!=null){
                     ktail.next = revHead;
                 }
@@ -42,7 +41,7 @@ class Solution {
             ktail.next = head;
         }
 
-        return newHead == null ? head:newHead;
+        return newHead == null? head: newHead;
     }
 
     public ListNode reverseLinkedList(ListNode head, int k){
@@ -54,7 +53,6 @@ class Solution {
             ptr.next = newHead;
             newHead = ptr;
             ptr = nextNode;
-
             k--;
         }
         return newHead;
