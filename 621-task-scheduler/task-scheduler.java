@@ -6,11 +6,10 @@ class Solution {
             freqMap.put(task,freqMap.getOrDefault(task, 0)+1);
         }
 
-        //Build a max heap based on frequency
+        //build a maxHeap based on the frequency
         PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a,b)->b-a);
         maxHeap.addAll(freqMap.values());
 
-        //process tasks
         int time = 0;
         while(!maxHeap.isEmpty()){
             List<Integer> temp = new ArrayList<>();
@@ -20,13 +19,14 @@ class Solution {
                 }
             }
             for(int freq: temp){
-                if(--freq>0){
-                    maxHeap.add(freq);
+                    if(--freq>0){
+                        maxHeap.add(freq);
+                    }
                 }
+                //update time
+                time+=maxHeap.isEmpty()? temp.size() : n+1;
             }
-            //update time
-            time+=maxHeap.isEmpty()? temp.size(): n+1;
+            return time;
         }
-        return time;
+        
     }
-}
